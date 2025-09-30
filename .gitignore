@@ -1,0 +1,4 @@
+kick_vod_downloads/*
+downloaded_vods.txt
+__pycache__/
+.env

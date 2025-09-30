@@ -1,0 +1,19 @@
+services:
+  kick-vod-downloader:
+    build: .
+    container_name: kick-auto
+    restart: unless-stopped
+    environment:
+      # Required: Comma-separated list of Kick channel names
+      # Set via env var: export CHANNELS="channel1,channel2"
+      # Or edit this line directly: CHANNELS: "yourchannel"
+      CHANNELS: "${CHANNELS:-}"
+      QUALITY: "${QUALITY:-480p30}"
+      POLL_SECONDS: "${POLL_SECONDS:-60}"
+      LIVE_CHECK_SECONDS: "${LIVE_CHECK_SECONDS:-60}"
+      DOWNLOAD_DIR: "/downloads"
+      DEBUG_HTTP: "${DEBUG_HTTP:-false}"
+      DEBUG_VERBOSE: "${DEBUG_VERBOSE:-false}"
+    volumes:
+      - ${DOWNLOAD_PATH:-./kick_vod_downloads}:/downloads
+    shm_size: "2gb"
