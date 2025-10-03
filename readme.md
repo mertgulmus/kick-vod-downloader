@@ -272,7 +272,7 @@ This tool is provided as-is for educational purposes. Users are responsible for 
 
 ## Changelog
 
-### Version 2.0
+### Version 1.0
 - ✅ Fetch VODs from a given channel
 - ✅ Download VODs
 - ✅ Schedule downloads
